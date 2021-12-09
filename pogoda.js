@@ -1,6 +1,6 @@
 const http = require('http');
-const myAPIkey =  '11f17b77167be6ab91629e3f1639a983'
-const myAPIkey2 = '11f17b77167be6ab91629e3f1639a983'
+//const myAPIkey =  '11f17b77167be6ab91629e3f1639a983'
+const myAPIkey =  process.env.myAPIkey;
 
 const yargs = require('yargs/yargs')
 const {hideBin} = require('yargs/helpers')
@@ -13,6 +13,9 @@ const argv1 = yargs(hideBin(process.argv))
     .option('city', {
         alias: 'c'
     }).argv
+
+
+console.log(myAPIkey)
 
 const url=  `http://api.weatherstack.com/current?access_key=${myAPIkey}&query=${argv1.c}`
 console.log(url)

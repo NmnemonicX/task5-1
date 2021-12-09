@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node pogoda.js",
+    "dev":  "node -r dotenv/config pogoda.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
