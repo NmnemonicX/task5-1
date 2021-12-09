@@ -1,23 +1,25 @@
 const http = require('http');
-//const myAPIkey =  '11f17b77167be6ab91629e3f1639a983'
+
 const myAPIkey =  process.env.myAPIkey;
-
-const yargs = require('yargs/yargs')
-const {hideBin} = require('yargs/helpers')
-const fs = require('fs')
-const path = require('path')
-const  readline = require('readline')
-const input = readline.createInterface(process.stdin , process.stdout)
-
-const argv1 = yargs(hideBin(process.argv))
-    .option('city', {
-        alias: 'c'
-    }).argv
+const city = process.env.city;
 
 
-console.log(myAPIkey)
+// const yargs = require('yargs/yargs')
+// const {hideBin} = require('yargs/helpers')
 
-const url=  `http://api.weatherstack.com/current?access_key=${myAPIkey}&query=${argv1.c}`
+
+// const argv1 = yargs(hideBin(process.argv))
+//     .option('city', {
+//         alias: 'c'
+//     }).argv
+
+
+// console.log(myAPIkey)
+// console.log(city)
+
+//const url=  `http://api.weatherstack.com/current?access_key=${myAPIkey}&query=${argv1.c}`
+const url=  `http://api.weatherstack.com/current?access_key=${myAPIkey}&query=${city}`
+
 console.log(url)
 
 
